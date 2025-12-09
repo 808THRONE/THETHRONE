@@ -16,7 +16,7 @@ const TerminalView = () => {
     const contactRef = useRef(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/profile')
+        fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/profile`)
             .then(res => res.json())
             .then(data => {
                 setProfile(data);
